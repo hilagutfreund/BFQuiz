@@ -1,10 +1,10 @@
-var hilaApp = angular.module('hilaApp', ['ngRoute', 'ui.router']);
+var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router']);
 
-    hilaApp.config(function($stateProvider, $urlRouterProvider){
-        $urlRouterProvider.otherwise('portfolio');
+    bfApp.config(function($stateProvider, $urlRouterProvider){
+        $urlRouterProvider.otherwise('bf');
         $stateProvider
-        .state('main', {
-            url: '/main',
+        .state('bf', {
+            url: '/bf',
             templateUrl: 'templates/main.html',
             controller: 'mainController'
         })
@@ -17,13 +17,9 @@ var hilaApp = angular.module('hilaApp', ['ngRoute', 'ui.router']);
         })
 
     });
-   
-    // // create the controller and inject Angular's $scope
-    // hilaApp.controller('mainController', function($scope, $rootScope) {
-    //     $scope.resume = "documents-forweb/HilaGutfreund-resume-2016.pdf"; 
-    // });
+
     
-    hilaApp.controller('mainController', function($scope, $rootScope) {
+    bfApp.controller('mainController', function($scope, $rootScope) {
         $scope.imagesReady = false; 
         $scope.$on('photosready', function(events, args){
             $scope.photosready = true; 
@@ -33,20 +29,6 @@ var hilaApp = angular.module('hilaApp', ['ngRoute', 'ui.router']);
             $scope.$root.$digest()
 
         })
-
-        jQuery(function($) {
-          $('.instagram').on('willLoadInstagram', function(event, options) {
-          });
-          $('.instagram').on('didLoadInstagram', function(event, response) {
-            $scope.images = response['data']; 
-            $rootScope.$broadcast('photosready', $scope.images);
-          });
-         $('.instagram').instagram({
-                  userId: 3271830693,
-                  accessToken: '3271830693.e8750bb.cb4e791f241b474d891c043abdac34c0'
-                });
-
-            });
 
         $scope.myprojects = [
             {

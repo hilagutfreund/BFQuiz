@@ -1,2 +1,1 @@
-Hila Gutfreund's personal portfolio website. 
-Included are several projects from university, sample writing through the years, and pattern portfolio from Instagram. 
+A small project that shows the different answers for BF quizzes. 

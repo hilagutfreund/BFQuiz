@@ -21,15 +21,20 @@ header{
 
 h1#header{
     padding:.05em;
-    font-family: "Playfair Display", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; 
+    /*font-family: "Playfair Display", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; */
+    font-family: "Proxima Nova",Helvetica,Arial,sans-serif;
+    color:#e32;
+    font-weight:bold;
 
 }
 h1{
-      font-family: "Playfair Display", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; 
+      /*font-family: "Playfair Display", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; */
+      font-family: "Proxima Nova",Helvetica,Arial,sans-serif;
 }
 
 h2, h3, h4, h5, li, a{
     font-family:'Quicksand', sans-serif;
+  
     text-align: center;
     color:black;
 }
@@ -46,8 +51,59 @@ a:hover, a:focus, a:active{
     text-decoration: none;
 }
 
-p, *{
-    font-family: 'EB Garamond', serif;
+label{
+  text-align:center;
+  font-family:'Quicksand', sans-serif;
+}
+
+
+
+
+button{
+  font-family:'Quicksand', sans-serif;
+}
+
+.btn{
+  font-family:inherit;
+}
+
+.btn-primary{
+  font-family:'Quicksand', sans-serif;
+}
+
+.bfinput{
+  font-family:'Quicksand', sans-serif;
+}
+
+
+/*.bfinput::-webkit-input-placeholder {
+  font-family: 'EB Garamond', serif !important;
+}
+
+.bfinput::ms-input-placeholder {
+  font-family: 'EB Garamond', serif !important;
+}
+
+.bfinput::-moz-placeholder {
+  font-family: 'EB Garamond', serif !important;
+}
+
+.bfinput::-moz-placeholder {
+  font-family: 'EB Garamond', serif !important;
+}*/
+
+input, .form-control{
+  font-family:'EB Garamond', sans-serif;
+  font-size:1em;
+}
+.form-control::-webkit-input-placeholder { font-size:1em;  font-family:"Proxima Nova",Helvetica,Arial,sans-serif; color:#eca6a6;}
+.form-control:-moz-placeholder { font-size:1em; font-family:"Proxima Nova",Helvetica,Arial,sans-serif;color:#eca6a6;}
+.form-control::-moz-placeholder { font-size:1em; font-family:"Proxima Nova",Helvetica,Arial,sans-serif;  color:#eca6a6;}
+.form-control:-ms-input-placeholder { font-size:1em; font-family:"Proxima Nova",Helvetica,Arial,sans-serif; color:#eca6a6;}
+
+
+p, label, *{
+    font-family: 'EB Garamond', sans-serif;
 }
 
 
