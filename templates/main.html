@@ -1,0 +1,31 @@
+
+<div id="projects" class="center">
+    <div>
+    <h2>Enter the url of a Buzzfeed Quiz here:</h2>
+    <form name="quizUrl" ng-controller="urlController">
+      <input = ng-model="quizUrl.url" type="text"/>
+    </form>
+
+    
+
+    <h5>University Programming Projects</h5>
+        <div class="project gallery">
+            <div class="inner">
+              <ul class="list">  
+               <li class="list-item" ng-repeat="project in myprojects">  
+                 <div class="list-content">    
+                  <a href="{{project.link}}"><h4>{{project.title}}</h4></a>  
+                  <a href="{{project.link}}"><img id="projectImage" ng-src="{{project.image}}" alt=""/></a> 
+                  <p id="projectDesc">{{project.description}}</p>  
+                  <p>{{project.year}}</p>
+                  <a href="{{project.docLink}}">Documentation</a>  
+                </div>  
+              </li>  
+            </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

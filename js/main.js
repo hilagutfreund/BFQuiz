@@ -1,0 +1,80 @@
+var hilaApp = angular.module('hilaApp', ['ngRoute', 'ui.router']);
+
+    hilaApp.config(function($stateProvider, $urlRouterProvider){
+        $urlRouterProvider.otherwise('portfolio');
+        $stateProvider
+        .state('main', {
+            url: '/main',
+            templateUrl: 'templates/main.html',
+            controller: 'mainController'
+        })
+
+        .state('about', {
+            url: '/about', 
+            templateUrl: "templates/about.html", 
+            controller: 'aboutController'
+
+        })
+
+    });
+   
+    // // create the controller and inject Angular's $scope
+    // hilaApp.controller('mainController', function($scope, $rootScope) {
+    //     $scope.resume = "documents-forweb/HilaGutfreund-resume-2016.pdf"; 
+    // });
+    
+    hilaApp.controller('mainController', function($scope, $rootScope) {
+        $scope.imagesReady = false; 
+        $scope.$on('photosready', function(events, args){
+            $scope.photosready = true; 
+            $scope.myfeed= args; 
+            console.log($scope.photosready);
+            console.log($scope.myfeed);
+            $scope.$root.$digest()
+
+        })
+
+        jQuery(function($) {
+          $('.instagram').on('willLoadInstagram', function(event, options) {
+          });
+          $('.instagram').on('didLoadInstagram', function(event, response) {
+            $scope.images = response['data']; 
+            $rootScope.$broadcast('photosready', $scope.images);
+          });
+         $('.instagram').instagram({
+                  userId: 3271830693,
+                  accessToken: '3271830693.e8750bb.cb4e791f241b474d891c043abdac34c0'
+                });
+
+            });
+
+        $scope.myprojects = [
+            {
+                "title": "WDJC", 
+                "description": "DJ is a procedural scripting language for algorithmic music production.", 
+                "year": "PLT, 2013",
+                "link": "http://whet-plt.github.io/wdjc/", 
+                "docLink": "https://github.com/WHET-PLT/documents",
+                "image": "img/WHET.png"
+            }, 
+            {   "title": "Squareday", 
+                "description": "SquareDay is a FourSquare based schedule generator.", 
+                "year": "User Interace Design, 2013",
+                "link": "http://squareday.github.io/squareday/", 
+                "docLink": "http://squareday.github.io/squareday/SquareDay_user.pdf", 
+                "image": "img/squareday.png"
+            }, 
+            {
+                "title": "Strokes", 
+                "description": "A gesture based video controlling web application.", 
+                "year": "User Interface Design, 2013",
+                "link": "http://hilagutfreund.github.io/Strokes/", 
+                "docLink": "http://hilagutfreund.github.io/Strokes/documentation.html",
+                "image": "img/daftPunk.jpg" 
+            }
+        ];
+
+    
+    });
+
+

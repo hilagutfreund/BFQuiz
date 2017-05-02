@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html ng-app="bfApp">
+    <head>
+      <title>BFQuiz</title>
+
+      <!-- load bootstrap and fontawesome via CDN -->
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+      <link href='https://fonts.googleapis.com/css?family=EB+Garamond|Quicksand:400,300,700|Marcellus+SC|Marcellus|Nova+Slim|Ribeye+Marrow|Almendra+Display|Playfair+Display:400,700italic,400italic,900italic,900' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="css/main.css" />
+
+      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+      <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+      <!-- load angular and angular route via CDN -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.js" type="text/javascript"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+      <script src="js/main.js"></script>
+  </head>
+
+
+  <body ng-controller="mainController">
+
+     <header>        
+        <h1 id='header'>Hila Gutfreund</h1>
+        <h4>Developer and grid addict</h4>  
+    </header>
+        
+      
+<!--     <div id="navDiv">
+        <ul class="nav">
+          <li><a ui-sref="portfolio" ui-sref-active-eq="active"><i class="fa fa-folder-open"></i> Portfolio</a></li>
+          <li><a ui-sref="about" ui-sref-active-eq="active"><i class="fa fa-info-circle"></i> About</a></li> 
+          <li><a href="{{resume}}"><i class="fa fa-file-text"></i> Resume</a></li>         
+          
+        </ul>
+    </div> -->
+
+    <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <div id="main">
+        <!-- angular templating -->
+        <!-- this is where content will be injected -->
+         <div ui-view></div>
+    </div>
+
+    <footer>
+      <ul>
+        <li>&copy; 2017 HILArious Designs. All rights reserved.</li>
+        <li><a href="mailto:hila@hilariousdesigns.com"><i class="fa fa-envelope-o"></i> Contact Me</a></li>
+      </ul>
+
+      <div class="social-icons">
+        <a href="https://github.com/hilagutfreund" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="https://www.instagram.com/hilariousdesigns/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+      </div>
+    </footer>
+
+  </body>
+</html>
