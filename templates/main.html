@@ -13,7 +13,11 @@
       </div>
       
     </form>
-    
+
+    <br>
+
+   
+    <br>
 
     <h5>University Programming Projects</h5>
         <div class="project gallery">
@@ -30,8 +34,21 @@
               </li>  
             </ul>
             </div>
-
         </div>
+
+        <div class="buzzfeedResults">
+          <div class="inner">
+            <ul class="list">
+              <li class="list-item" ng-repeat="answer in answers">
+                <div class="list-content">
+                 <div ng-bind-html="answer.attributes['0'].ownerElement.outerHTML"></div>
+                </div>
+                </li>
+              </ul>
+              </div>
+            </div>
+
+
     </div>
 </div>
 

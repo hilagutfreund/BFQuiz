@@ -1,4 +1,4 @@
-var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router']);
+var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router', 'ngSanitize']);
 
     bfApp.config(function($stateProvider, $urlRouterProvider){
         $urlRouterProvider.otherwise('bf');
@@ -20,15 +20,29 @@ var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router']);
 
     
     bfApp.controller('mainController', function($scope, $rootScope) {
-        $scope.imagesReady = false; 
-        $scope.$on('photosready', function(events, args){
-            $scope.photosready = true; 
-            $scope.myfeed= args; 
-            console.log($scope.photosready);
-            console.log($scope.myfeed);
-            $scope.$root.$digest()
+        $scope.renderHtml = function(html_code)
+        {
+            return $sce.trustAsHtml(html_code);
+        };
 
-        })
+        // $scope.imagesReady = false; 
+        // $scope.$on('photosready', function(events, args){
+        //     $scope.photosready = true; 
+        //     $scope.myfeed= args; 
+        //     console.log($scope.photosready);
+        //     console.log($scope.myfeed);
+        //     $scope.$root.$digest()
+
+        // });
+        //$scope.answersReady = false; 
+          $scope.$on('answersready', function(events, args){
+            $scope.answersready = true; 
+            $scope.answers= args; 
+            console.log($scope.answersready);
+            console.log($scope.answers);
+            $scope.$root.$digest();
+
+        });
 
         // jQuery(function($) {
         //   $('.instagram').on('willLoadInstagram', function(event, options) {
@@ -43,6 +57,43 @@ var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router']);
         //         });
 
         //     });
+
+$scope.origresultList = []; 
+$scope.actualResultsList = [];
+jQuery(function($){
+    var url = "https://www.buzzfeed.com/spreetsg/pick-gear-from-serengetee-and-well-tell-you-the-n-ge2c?utm_term=.pkwL4g5q7#.uq1LdM809";
+    $.ajaxPrefilter( function (options) {
+        if (options.crossDomain && jQuery.support.cors) {
+            var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+            options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+    //options.url = "http://cors.corsproxy.io/url=" + options.url;
+        }
+    });
+
+    $.get(
+        url,
+        function (response) {
+            console.log(response);
+            var html = $.parseHTML(response); 
+            $scope.origresultsList = ($(html).find('article'));
+            for(i=0; i<$scope.origresultsList.length; i++){
+                var result = $scope.origresultsList[i];
+                if(($(result).attr('class')) == 'subbuzz-quiz__result js-subbuzz-quiz__result xs-mb3 js-hidden'){
+                    var elem = result.getElementsByTagName("img");
+                    console.log(elem);
+                    $("figure", result).remove().end()[0];
+                
+                    $scope.actualResultsList.push(result); 
+                }
+            }
+            console.log($scope.actualResultsList);
+            $rootScope.$broadcast('answersready', $scope.actualResultsList);
+            // response.getElementsByTagName("article");
+
+    });
+});
+
+
 
 //  $(document).ready(function () {
 //             var url = "https://www.buzzfeed.com/spreetsg/pick-gear-from-serengetee-and-well-tell-you-the-n-ge2c?utm_term=.pkwL4g5q7#.uq1LdM809";
