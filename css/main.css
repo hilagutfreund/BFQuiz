@@ -69,7 +69,30 @@ button{
 
 .btn-primary{
   font-family:'Quicksand', sans-serif;
+  background-color: #eca6a6;
+  border-color:#eca6a6;
 }
+
+.btn-primary:hover{
+  border-color: #e32;
+  background-color: #e32;
+}
+
+.btn-primary:visited{
+  border-color:#eca6a6;
+}
+
+.btn-primary:active{
+border-color: #e32;
+  background-color: #e32;
+}
+
+.btn-primary:focus{
+border-color: #e32;
+  background-color: #e32;
+}
+
+
 
 .bfinput{
   font-family:'Quicksand', sans-serif;
@@ -93,7 +116,7 @@ button{
 }*/
 
 input, .form-control{
-  font-family:'EB Garamond', sans-serif;
+  font-family:"Proxima Nova",Helvetica,Arial,sans-serif;
   font-size:1em;
 }
 .form-control::-webkit-input-placeholder { font-size:1em;  font-family:"Proxima Nova",Helvetica,Arial,sans-serif; color:#eca6a6;}
@@ -101,6 +124,10 @@ input, .form-control{
 .form-control::-moz-placeholder { font-size:1em; font-family:"Proxima Nova",Helvetica,Arial,sans-serif;  color:#eca6a6;}
 .form-control:-ms-input-placeholder { font-size:1em; font-family:"Proxima Nova",Helvetica,Arial,sans-serif; color:#eca6a6;}
 
+.form-control:focus{
+  border-color: #eca6a6;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px #eca6a6;
+}
 
 p, label, *{
     font-family: 'EB Garamond', sans-serif;
