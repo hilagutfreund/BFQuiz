@@ -51,9 +51,15 @@ var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router', 'ngSanitize']);
         //$scope.answersReady = false; 
           $scope.$on('answersready', function(events, args){
             $scope.answersready = true; 
-            $scope.answers= args; 
-            console.log($scope.answersready);
-            console.log($scope.answers);
+            $scope.answers= args;  
+            $scope.$root.$digest();
+
+        });
+
+            $scope.$on('titleready', function(events, args){
+            $scope.answersready = true; 
+            $scope.titleOfArticle= args;
+            console.log($scope.titleOfArticle.innerHTML); 
             $scope.$root.$digest();
 
         });
@@ -91,19 +97,24 @@ jQuery(function($){
         function (response) {
             //console.log(response);
             var html = $.parseHTML(response); 
+            //find title and subtitle
+            
+            //find answers
             $scope.origresultsList = ($(html).find('article'));
             for(i=0; i<$scope.origresultsList.length; i++){
                 var result = $scope.origresultsList[i];
                 if(($(result).attr('class')) == 'subbuzz-quiz__result js-subbuzz-quiz__result xs-mb3 js-hidden'){
-                    var elem = result.getElementsByTagName("img");
-                    console.log(elem);
                     $("figure", result).remove().end()[0];
                 
                     $scope.actualResultsList.push({html:result, image: $scope.shuffledBadges[i%($scope.shuffledBadges.length)]}); 
                 }
             }
-            console.log($scope.actualResultsList);
+            $scope.headerList = ($(html).find('hgroup'));
+            $("div", $scope.headerList[0]).remove().end()[0];
+            $rootScope.$broadcast('titleready', $scope.headerList[0]);
             $rootScope.$broadcast('answersready', $scope.actualResultsList);
+
+
             // response.getElementsByTagName("article");
 
     });
