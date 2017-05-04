@@ -25,6 +25,20 @@ var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router', 'ngSanitize']);
             return $sce.trustAsHtml(html_code);
         };
 
+        /**
+        * Randomize array element order in-place.
+        * Using Durstenfeld shuffle algorithm.
+        */
+        function shuffleArray(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        }
+
         // $scope.imagesReady = false; 
         // $scope.$on('photosready', function(events, args){
         //     $scope.photosready = true; 
@@ -60,6 +74,8 @@ var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router', 'ngSanitize']);
 
 $scope.origresultList = []; 
 $scope.actualResultsList = [];
+$scope.badges = ['../img/badges/basic-badge.png', '../img/badges/blessed-badge.png', '../img/badges/kthxbai-badge.png','../img/badges/meh-badge.png', '../img/badges/orly-badge.png', '../img/badges/bf-badge.png', '../img/badges/lol-badge.png', '../img/badges/cute-badge.png',  '../img/badges/omg-badge.png', '../img/badges/win-badge.png', '../img/badges/wtf-badge.png'];
+$scope.shuffledBadges = shuffleArray($scope.badges); 
 jQuery(function($){
     var url = "https://www.buzzfeed.com/spreetsg/pick-gear-from-serengetee-and-well-tell-you-the-n-ge2c?utm_term=.pkwL4g5q7#.uq1LdM809";
     $.ajaxPrefilter( function (options) {
@@ -73,7 +89,7 @@ jQuery(function($){
     $.get(
         url,
         function (response) {
-            console.log(response);
+            //console.log(response);
             var html = $.parseHTML(response); 
             $scope.origresultsList = ($(html).find('article'));
             for(i=0; i<$scope.origresultsList.length; i++){
@@ -83,7 +99,7 @@ jQuery(function($){
                     console.log(elem);
                     $("figure", result).remove().end()[0];
                 
-                    $scope.actualResultsList.push(result); 
+                    $scope.actualResultsList.push({html:result, image: $scope.shuffledBadges[i%($scope.shuffledBadges.length)]}); 
                 }
             }
             console.log($scope.actualResultsList);

@@ -8,15 +8,33 @@ body{
     margin: .96em;
 }
 
-
 header{
+  text-align:center;
+  padding-top:1em;
+  padding-bottom:1em;
+  font-weight:bold;
+  font-family: "Proxima Nova",Helvetica,Arial,sans-serif;
+  color:#e32;
+  font-size: 1em;
+}
+
+header>span{
+  font-weight:bold;
+  font-family: "Proxima Nova",Helvetica,Arial,sans-serif;
+  color:#e32;
+  font-size: 1em;
+}
+
+header#mainHeader{
     text-align: center;
    /* padding-top:6.25em ;*/
-   padding-top:5.5em;
-    padding-bottom:3.95em;
+   padding-top:4em;
+    padding-bottom:3em;
    /* padding-top:5em;
     padding-bottom:2em;*/
 }
+
+
 
 
 h1#header{
@@ -98,22 +116,6 @@ border-color: #e32;
   font-family:'Quicksand', sans-serif;
 }
 
-
-/*.bfinput::-webkit-input-placeholder {
-  font-family: 'EB Garamond', serif !important;
-}
-
-.bfinput::ms-input-placeholder {
-  font-family: 'EB Garamond', serif !important;
-}
-
-.bfinput::-moz-placeholder {
-  font-family: 'EB Garamond', serif !important;
-}
-
-.bfinput::-moz-placeholder {
-  font-family: 'EB Garamond', serif !important;
-}*/
 
 input, .form-control{
   font-family:"Proxima Nova",Helvetica,Arial,sans-serif;
@@ -282,6 +284,9 @@ img#projectImage{
     width:150px;
     height:150px;
     object-fit: cover;
+  justify-content: center;
+}
+
 }
 
 
@@ -306,6 +311,8 @@ div.inner{
     flex-flow:column;
     align-items:center;
 }
+
+
 @media all and (min-width:4em) {
   .list-item {
     padding: 0.5em;
