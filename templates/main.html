@@ -5,16 +5,17 @@
     <form name="quizUrl">
       
       <div class="input-group">
-        <input = ng-model="quizUrl.url" class="form-control" id="bfurl" type="text" placeholder="Type in the url of a Buzzfeed quiz"/>
+        <input = ng-model="quizit" class="form-control" id="bfurl" type="url" placeholder="Copy the url of a Buzzfeed quiz"/>
         <span class="input-group-btn">
-          <button class="btn btn-primary bfinput" type="button">Submit</button>
+          <button class="btn btn-primary bfinput" type="button" ng-click="searchUrl(quizit)">Submit</button>
         </span>
-      
       </div>
       
     </form>
 
+
     <br>
+    <div ng-hide="false">
     <div ng-bind-html="titleOfArticle.innerHTML"></div>
     <br>
         <div class="buzzfeedResults">
@@ -32,6 +33,7 @@
 
 
     </div>
+  </div>
 </div>
 
 
