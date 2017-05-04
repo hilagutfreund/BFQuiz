@@ -1,1 +1,1 @@
-A small project that shows the different answers for BF quizzes. 
+A small project that shows the different answers for BuzzFeed quizzes. 

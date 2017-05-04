@@ -4,7 +4,7 @@
    Author's custom styles
    ========================================================================== */
 body{
-    background-image: url('/light_grey.png');
+    background-image: url('../img/geometry2.png');
     margin: .96em;
 }
 
