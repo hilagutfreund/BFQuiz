@@ -60,12 +60,12 @@ h2{
     padding-top:0.5em;
 }
 a>h2:hover, a>h4:hover{
- color: #673ab7;
+ color: #e32;
 }
 
 
 a:hover, a:focus, a:active{
-    color:#673ab7 !important;
+    color:#e32 !important;
     text-decoration: none;
 }
 
@@ -174,14 +174,14 @@ ul.nav>li>a{
 
 ul.nav>li>a:hover{
     text-decoration: none;
-    color: #673ab7;
+    color: #e32;
     background-color:transparent ;
 }
 
 
 ul.nav>li>a.active{
     text-decoration: none;
-    color: #673ab7;
+    color: #e32;
     background-color:transparent !important;
 }
 
