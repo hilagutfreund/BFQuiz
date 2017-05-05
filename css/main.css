@@ -76,6 +76,12 @@ label{
 
 
 
+#help{
+  position:absolute;
+  right:0;
+  top:0;
+}
+
 
 button{
   font-family:'Quicksand', sans-serif;
