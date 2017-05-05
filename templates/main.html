@@ -1,14 +1,24 @@
 
 <div id="projects" class="center">
     <div>
-    <form name="quizUrl">
+    <form name="quizUrl" novalidate>
       
-      <div class="input-group">
-        <input = ng-model="quizit" class="form-control" id="bfurl" type="url" placeholder="Copy the url of a Buzzfeed quiz"/>
+      <div class="input-group" ng-class="{error:!quizURL.buzzfeedURL.$valid}">
+        <input = 
+                name="buzzfeedURL"
+                ng-model="quizit" 
+                class="form-control"
+                ng-pattern="buzzfeedURLPattern" 
+                id="bfurl" 
+                type="text" 
+                placeholder="Copy the url of a Buzzfeed quiz"/>
         <span class="input-group-btn">
-          <button class="btn btn-primary bfinput" type="button" ng-click="searchUrl(quizit)">Submit</button>
+          <button class="btn btn-primary bfinput" type="button" ng-click="quizUrl.$valid && searchUrl(quizit)">Submit</button>
         </span>
       </div>
+      <span ng-show="quizUrl.buzzfeedURL.$error.pattern">Must be a valid Buzzfeed quiz url! Make sure it begins with https://www.buzzfeed.com (Ex. https://www.buzzfeed.com/12katiedavis/which-singin-in-the-rain-character-are-you-2yau5?utm_term=.ujOOmMgWv#.fr6VGOxeE)
+      </span>
+     
       
     </form>
 
