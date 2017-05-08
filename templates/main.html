@@ -1,5 +1,5 @@
 
-<div id="projects" class="center">
+<div class="center">
     <div>
     <form name="quizUrl" novalidate>
       
@@ -27,7 +27,7 @@
     <div ng-hide="false">
     <div ng-bind-html="titleOfArticle.innerHTML"></div>
     <br>
-        <div class="buzzfeedResults">
+        <!-- <div class="buzzfeedResults container" >
           <div class="inner">
             <ul class="list">
               <li class="list-item" ng-repeat="answer in answers">
@@ -37,6 +37,17 @@
                </div>
                 </li>
               </ul>
+              </div>
+            </div> -->
+
+            <div class="container-fluid">
+              <div class="row is-flex">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3" ng-repeat="answer in answers">
+                  <div class="list-content">
+                    <img class="block-center image-holder" id="projectImage" ng-src="{{answer.image}}"/>
+                    <div ng-bind-html="answer.html.attributes['0'].ownerElement.outerHTML"></div>
+                  </div>
+                </div>
               </div>
             </div>
 
