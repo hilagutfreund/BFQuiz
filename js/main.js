@@ -67,9 +67,11 @@ var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router', 'ngSanitize']);
 $scope.origresultList = []; 
 $scope.actualResultsList = [];
 $scope.badges = ['img/badges/basic-badge.png', 'img/badges/blessed-badge.png', 'img/badges/kthxbai-badge.png','img/badges/meh-badge.png', 'img/badges/orly-badge.png', 'img/badges/bf-badge.png', 'img/badges/lol-badge.png', 'img/badges/cute-badge.png',  'img/badges/omg-badge.png', 'img/badges/win-badge.png', 'img/badges/wtf-badge.png'];
-$scope.shuffledBadges = shuffleArray($scope.badges); 
+$scope.shuffledBadges = [];
 
 $scope.searchUrl = function(url){
+    $scope.shuffledBadges = [];
+    $scope.shuffledBadges = shuffleArray($scope.badges);
     $scope.origresultList = []; 
     $scope.actualResultsList = [];
     $scope.personalityQuiz = false; 
