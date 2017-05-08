@@ -2,7 +2,6 @@
 <div class="center">
     <div>
     <form name="quizUrl" novalidate>
-      
       <div class="input-group" ng-class="{error:!quizURL.buzzfeedURL.$valid}">
         <input = 
                 name="buzzfeedURL"
@@ -17,39 +16,26 @@
         </span>
       </div>
       <span ng-show="quizUrl.buzzfeedURL.$error.pattern">Must be a valid Buzzfeed quiz url! Make sure it begins with https://www.buzzfeed.com (Ex. https://www.buzzfeed.com/12katiedavis/which-singin-in-the-rain-character-are-you-2yau5?utm_term=.ujOOmMgWv#.fr6VGOxeE)
-      </span>
-     
-      
+      </span>   
     </form>
 
-
     <br>
+
     <div ng-hide="false">
-    <div ng-bind-html="titleOfArticle.innerHTML"></div>
+    <a href="{{url}}"  target="_blank"><div ng-bind-html="titleOfArticle.innerHTML"></div></a>
+   
     <br>
-        <!-- <div class="buzzfeedResults container" >
-          <div class="inner">
-            <ul class="list">
-              <li class="list-item" ng-repeat="answer in answers">
-                <div class="list-content">
-                <img id="projectImage" ng-src="{{answer.image}}"/>
-                 <div ng-bind-html="answer.html.attributes['0'].ownerElement.outerHTML"></div>
-               </div>
-                </li>
-              </ul>
-              </div>
-            </div> -->
 
-            <div class="container-fluid">
-              <div class="row is-flex">
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3" ng-repeat="answer in answers">
-                  <div class="list-content">
-                    <img class="block-center image-holder" id="projectImage" ng-src="{{answer.image}}"/>
-                    <div ng-bind-html="answer.html.attributes['0'].ownerElement.outerHTML"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div class="container-fluid">
+      <div class="row is-flex">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3" ng-repeat="answer in answers">
+          <div class="list-content">
+            <img class="block-center image-holder" id="projectImage" ng-src="{{answer.image}}"/>
+            <div ng-bind-html="answer.html.attributes['0'].ownerElement.outerHTML"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     </div>

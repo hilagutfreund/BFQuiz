@@ -26,17 +26,7 @@ var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router', 'ngSanitize']);
         // };
         $scope.quizit = "";
         $scope.buzzfeedURLPattern = new RegExp("https?:\/\/(www\.)buzzfeed.com([-a-zA-Z0-9@:%_\+.~#?&//=]*)", "i");
-        // $scope.buzzfeedURLPattern = (function() {
-        //     var regexp = /^\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})$/;
-        //     return {
-        //         test: function(value) {
-        //             if( $scope.requireTel === false ) {
-        //                 return true;
-        //             }
-        //             return regexp.test(value);
-        //         }
-        //     };
-        // })();
+
         /**
         * Randomize array element order in-place.
         * Using Durstenfeld shuffle algorithm.
@@ -70,6 +60,7 @@ $scope.badges = ['img/badges/basic-badge.png', 'img/badges/blessed-badge.png', '
 $scope.shuffledBadges = [];
 
 $scope.searchUrl = function(url){
+    $scope.url =url;
     $scope.shuffledBadges = [];
     $scope.shuffledBadges = shuffleArray($scope.badges);
     $scope.origresultList = []; 
