@@ -258,6 +258,116 @@ div.inner{
 }
 
 
+ /*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+      h1{ font-size:50px;}
+      ul.nav>li>a{
+        /*font-size:1.5em;*/
+        font-size:130%;
+      }
+      h5{
+        font-size:18px;
+      }
+      h4{
+        font-size:22px; 
+      }
+       h2{
+        font-size:32px; /*was 18*/
+      }
+      p{
+        font-size:110%;
+      }
+
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+      h1{ font-size:50px;}
+      ul.nav>li>a{
+        /*font-size:1.5em;*/
+        font-size:130%;
+      }
+       h5{
+        font-size:18px;
+      }
+      h4{
+        font-size:22px; 
+      }
+       h2{
+        font-size:32px; /*was 18*/
+      }
+      p{
+        font-size:110%;
+      }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+      h1{ font-size:42px;}
+      ul.nav>li>a{
+        /*font-size:1.4em;*/
+        font-size:130%;
+      }
+       h5{
+        font-size:18px;
+      }
+      h4{
+        font-size:22px; 
+      }
+       h2{
+        font-size:32px; /*was 18*/
+      }
+      p{
+        font-size:110%;
+      }
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+      h1{ font-size:42px;}
+      ul.nav>li>a{
+        /*font-size:1.3em;*/
+        font-size:130%;
+      }
+       h5{
+        font-size:16px;
+      }
+      h4{
+        font-size:20px; 
+      }
+       h2{
+        font-size:30px; /*was 18*/
+      }
+      p{
+        font-size:100%;
+      }
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+      h1{ font-size:42px;}
+      ul.nav>li>a{
+        /*font-size:1.3em;*/
+        font-size:130%;
+      }
+       h5{
+        font-size:16px; /*was 14*/
+      }
+       h4{
+        font-size:20px; /*was 18*/
+      }
+       h2{
+        font-size:30px; /*was 18*/
+      }
+      p{
+        font-size:100%;
+      }
+    }
+
+/*===============================================*/
+
 /*Things used in other projects*/
 
 /*div#navDiv{
