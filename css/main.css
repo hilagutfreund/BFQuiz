@@ -368,6 +368,12 @@ div.inner{
 
 /*===============================================*/
 
+.spinner{
+  text-align: center;
+  font-size: 3em; 
+  color: #e32;
+}
+
 /*Things used in other projects*/
 
 /*div#navDiv{

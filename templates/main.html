@@ -23,7 +23,11 @@
 
     <br>
 
-    <div ng-hide="false">
+    <div>
+    <div class="center spinner" ng-show="!answersready && submitPressed"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+    </div>
+
     <a href="{{url}}"  target="_blank"><div ng-bind-html="titleOfArticle.innerHTML"></div></a>
    
     <br>

@@ -20,13 +20,14 @@ var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router', 'ngSanitize']);
 
     
     bfApp.controller('mainController', function($scope, $rootScope) {
+        $scope.submitPressed = false; 
         // $scope.renderHtml = function(html_code)
         // {
         //     return $sce.trustAsHtml(html_code);
         // };
         $scope.quizit = "";
         $scope.buzzfeedURLPattern = new RegExp("https?:\/\/(www\.)buzzfeed.com([-a-zA-Z0-9@:%_\+.~#?&//=]*)", "i");
-
+        $scope.answersready = false; 
         /**
         * Randomize array element order in-place.
         * Using Durstenfeld shuffle algorithm.
@@ -43,12 +44,13 @@ var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router', 'ngSanitize']);
 
         $scope.$on('answersready', function(events, args){
         $scope.answersready = true; 
+        $scope.submitPressed = false; 
         $scope.answers= args;  
         $scope.$root.$digest();
         });
 
         $scope.$on('titleready', function(events, args){
-        $scope.answersready = true; 
+        $scope.titleready = true; 
         $scope.titleOfArticle= args;
         $scope.$root.$digest();
         });
@@ -60,6 +62,7 @@ $scope.badges = ['img/badges/basic-badge.png', 'img/badges/blessed-badge.png', '
 $scope.shuffledBadges = [];
 
 $scope.searchUrl = function(url){
+    $scope.submitPressed = true; 
     $scope.url =url;
     $scope.shuffledBadges = [];
     $scope.shuffledBadges = shuffleArray($scope.badges);
