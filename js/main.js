@@ -115,7 +115,9 @@ $scope.searchUrl = function(url){
 
             if($scope.personalityQuiz == true){
                 //find title and subtitle
+
                 $scope.headerList = ($(html).find('hgroup'));
+                $("a", $scope.headerList[0]).remove().end()[0];
                 $("div", $scope.headerList[0]).remove().end()[0];
 
                 //broadcast
