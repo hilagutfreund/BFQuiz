@@ -1,13 +1,14 @@
 
 
 /* ==========================================================================
-   Author's custom styles
+   HILArious Desgins' custom styles
    ========================================================================== */
 body{
     background-image: url('../img/geometry2.png');
     margin: .96em;
 }
 
+/*headers*/
 header{
   text-align:center;
   padding-top:1em;
@@ -35,8 +36,6 @@ header#mainHeader{
 }
 
 
-
-
 h1#header{
     padding:.05em;
     /*font-family: "Playfair Display", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; */
@@ -45,6 +44,8 @@ h1#header{
     font-weight:bold;
 
 }
+
+/*fonts and styles*/
 h1{
       /*font-family: "Playfair Display", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; */
       font-family: "Proxima Nova",Helvetica,Arial,sans-serif;
@@ -59,6 +60,7 @@ h2, h3, h4, h5, li, a{
 h2{
     padding-top:0.5em;
 }
+
 a>h2:hover, a>h4:hover{
  color: #e32;
 }
@@ -71,12 +73,20 @@ a:hover, a:focus, a:active{
 
 label{
   text-align:center;
+  font-weight:normal; 
   font-family:'Quicksand', sans-serif;
 }
 
+p, label, *{
+    font-family: 'EB Garamond', sans-serif;
+}
+label{
+    text-align: center;
+    font-weight:normal; 
+}
 
 
-
+/*buttons*/
 button{
   font-family:'Quicksand', sans-serif;
 }
@@ -111,11 +121,10 @@ border-color: #e32;
 }
 
 
-
+/*inputs*/
 .bfinput{
   font-family:'Quicksand', sans-serif;
 }
-
 
 input, .form-control{
   font-family:"Proxima Nova",Helvetica,Arial,sans-serif;
@@ -134,62 +143,8 @@ input, .form-control{
 input.ng-dirty.ng-invalid { color: red }
 input.ng-dirty.ng-valid { color: green }
 
-p, label, *{
-    font-family: 'EB Garamond', sans-serif;
-}
 
-
-div#navDiv{
-    border:1px solid #9d9995;
-    border-width:1px 0;
-    text-align: center;
-}
-
-ul.nav{
-    
-    list-style:none;
-    margin:0;
-    padding:0;
-    text-align:center;
-    display:inline-block;
-    color:black;
-    /*color:#673ab7;*/
-}
-
-ul.nav>li{
-    display:inline;
-    text-align: center;
-    color:black;
-    /*color:#673ab7;*/
-}
-
-ul.nav>li>a{
-    display:inline-block;
-    padding:10px;
-    text-align:center;
-    color:black;
-    font-size: 1.3em; 
-    /*color:#673ab7;*/
-}
-
-ul.nav>li>a:hover{
-    text-decoration: none;
-    color: #e32;
-    background-color:transparent ;
-}
-
-
-ul.nav>li>a.active{
-    text-decoration: none;
-    color: #e32;
-    background-color:transparent !important;
-}
-
-
-ul.nav>li>a:focus{
-    background-color: transparent;
-}
-
+/*footer*/
 footer{
     text-align:center;
 }
@@ -215,20 +170,7 @@ footer>ul>li>a{
     color:black;
 }
 
-
-
-label{
-    text-align: center;
-    font-weight:normal; 
-}
-
-img#aboutpic{
-    height:20em;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-}
-
+/*basic transform*/
 .center{
     position:relative;
     left:50%;
@@ -236,39 +178,6 @@ img#aboutpic{
     transform: translate(-50%);
 }
 
-.aboutcontainer{
-    display:-ms-flex;
-    display: -webkit-flex;
-    display: flex;
-    flex-wrap:wrap; 
-}
-@media all and (max-width:1130px){  
-    div.columnright{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-    }
-    .columnleft>h3{
-        text-align:center !important;
-    }
-}
-
-
-.columnright{
-    flex: 1 0 20%;
-    padding:.5em;
-    justify-content:center;
-    text-align:left;
-}
-.columnleft{
-    flex: 1 0 75%;
-    padding:.5em;
-    text-align:left;
-    
-}
-.columnleft>h3{
-    text-align:left;
-}
 
 /*For the instagram grid.. or any flex grid hopefully!!!*/
 ul.list{
@@ -279,29 +188,15 @@ ul.list{
   padding-left:0;
 
 }
-p#projectDesc{
-    text-align:center;
-}
-img#projectImage{
-    
-    width:150px;
-    height:150px;
-    object-fit: cover;
-  justify-content: center;
-}
-
-}
 
 
-.list-content {
-   display: flex;
-   flex-direction: column;
-   /*background-color: #fff;*/
-   padding: .5em;
-   width: 100%;
-}
-.list-content p {
-  flex: 1 0 auto;
+.image-holder { 
+  /*height: 15em;*/
+  width:100%;
+  height:100%;
+  max-width: 15em; 
+  max-height:15em;
+  object-fit: cover;
 }
 
 div.inner{
@@ -315,8 +210,222 @@ div.inner{
     align-items:center;
 }
 
+.list-content {
+   /*display: flex;
+   flex-direction: column;*/
+   /*background-color: #fff;*/
 
-@media all and (min-width:4em) {
+   /*display: flex;
+   flex-direction: column;
+   background-color: #fff;
+   padding: .5em;
+   width: 100%;*/
+
+   padding: .5em;
+   width: 100%;
+   text-align:center;
+   display: inline-block;
+   float:none;
+}
+.list-content p {
+  /*flex: 1 0 auto;*/
+  text-align: center;
+}
+
+.list-content img{
+  text-align:center;
+  display:inline-block;
+  float:none;
+}
+
+
+.row.is-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.is-flex > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.is-flex .box {
+  background: none;
+  position: static;
+}
+.is-flex [class*="col-"] {
+  /*background: #fff;*/
+}
+
+
+ /*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+      h1{ font-size:50px;}
+      ul.nav>li>a{
+        /*font-size:1.5em;*/
+        font-size:130%;
+      }
+      h5{
+        font-size:18px;
+      }
+      h4{
+        font-size:22px; 
+      }
+       h2{
+        font-size:32px; /*was 18*/
+      }
+      p{
+        font-size:110%;
+      }
+
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+      h1{ font-size:50px;}
+      ul.nav>li>a{
+        /*font-size:1.5em;*/
+        font-size:130%;
+      }
+       h5{
+        font-size:18px;
+      }
+      h4{
+        font-size:22px; 
+      }
+       h2{
+        font-size:32px; /*was 18*/
+      }
+      p{
+        font-size:110%;
+      }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+      h1{ font-size:42px;}
+      ul.nav>li>a{
+        /*font-size:1.4em;*/
+        font-size:130%;
+      }
+       h5{
+        font-size:18px;
+      }
+      h4{
+        font-size:22px; 
+      }
+       h2{
+        font-size:32px; /*was 18*/
+      }
+      p{
+        font-size:110%;
+      }
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+      h1{ font-size:42px;}
+      ul.nav>li>a{
+        /*font-size:1.3em;*/
+        font-size:130%;
+      }
+       h5{
+        font-size:16px;
+      }
+      h4{
+        font-size:20px; 
+      }
+       h2{
+        font-size:30px; /*was 18*/
+      }
+      p{
+        font-size:100%;
+      }
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+      h1{ font-size:42px;}
+      ul.nav>li>a{
+        /*font-size:1.3em;*/
+        font-size:130%;
+      }
+       h5{
+        font-size:16px; /*was 14*/
+      }
+       h4{
+        font-size:20px; /*was 18*/
+      }
+       h2{
+        font-size:30px; /*was 18*/
+      }
+      p{
+        font-size:100%;
+      }
+    }
+
+/*===============================================*/
+
+.spinner{
+  text-align: center;
+  font-size: 3em; 
+  color: #e32;
+}
+
+/*Things used in other projects*/
+
+/*div#navDiv{
+    border:1px solid #9d9995;
+    border-width:1px 0;
+    text-align: center;
+}
+
+ul.nav{
+    
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+    display:inline-block;
+    color:black;
+}
+
+ul.nav>li{
+    display:inline;
+    text-align: center;
+    color:black;
+}
+
+ul.nav>li>a{
+    display:inline-block;
+    padding:10px;
+    text-align:center;
+    color:black;
+    font-size: 1.3em; 
+}
+
+ul.nav>li>a:hover{
+    text-decoration: none;
+    color: #e32;
+    background-color:transparent ;
+}
+
+
+ul.nav>li>a.active{
+    text-decoration: none;
+    color: #e32;
+    background-color:transparent !important;
+}
+
+
+ul.nav>li>a:focus{
+    background-color: transparent;
+}*/
+
+
+/*@media all and (min-width:4em) {
   .list-item {
     padding: 0.5em;
     width: 100%;
@@ -394,9 +503,36 @@ div.inner{
         text-align:center !important;
     }
 
+  }*/
+
+  /*p#projectDesc{
+      text-align:center;
   }
+  img#projectImage{
+      
+      width:150px;
+      height:150px;
+      object-fit: cover;
+    justify-content: center;
+  }*/
 
+/*.list-content {
+   display: flex;
+   flex-direction: column;
+   background-color: #fff;
+   padding: .5em;
+   width: 100%;
+}
+.list-content p {
+  flex: 1 0 auto;
+}*/
 
+/*img#aboutpic{
+    height:20em;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}*/
 
 
 /*img#projectImage{
@@ -412,12 +548,38 @@ div.inner{
 }*/
 
 
+/*@media all and (max-width:1130px){  
+    div.columnright{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .columnleft>h3{
+        text-align:center !important;
+    }
+}
 
 
+.columnright{
+    flex: 1 0 20%;
+    padding:.5em;
+    justify-content:center;
+    text-align:left;
+}
+.columnleft{
+    flex: 1 0 75%;
+    padding:.5em;
+    text-align:left;
+    
+}
+.columnleft>h3{
+    text-align:left;
+}
+*/
 
-
-
-
-
-
-
+/*.aboutcontainer{
+    display:-ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap:wrap; 
+}*/

@@ -20,23 +20,14 @@ var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router', 'ngSanitize']);
 
     
     bfApp.controller('mainController', function($scope, $rootScope) {
+        $scope.submitPressed = false; 
         // $scope.renderHtml = function(html_code)
         // {
         //     return $sce.trustAsHtml(html_code);
         // };
         $scope.quizit = "";
         $scope.buzzfeedURLPattern = new RegExp("https?:\/\/(www\.)buzzfeed.com([-a-zA-Z0-9@:%_\+.~#?&//=]*)", "i");
-        // $scope.buzzfeedURLPattern = (function() {
-        //     var regexp = /^\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})$/;
-        //     return {
-        //         test: function(value) {
-        //             if( $scope.requireTel === false ) {
-        //                 return true;
-        //             }
-        //             return regexp.test(value);
-        //         }
-        //     };
-        // })();
+        $scope.answersready = false; 
         /**
         * Randomize array element order in-place.
         * Using Durstenfeld shuffle algorithm.
@@ -53,12 +44,13 @@ var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router', 'ngSanitize']);
 
         $scope.$on('answersready', function(events, args){
         $scope.answersready = true; 
+        $scope.submitPressed = false; 
         $scope.answers= args;  
         $scope.$root.$digest();
         });
 
         $scope.$on('titleready', function(events, args){
-        $scope.answersready = true; 
+        $scope.titleready = true; 
         $scope.titleOfArticle= args;
         $scope.$root.$digest();
         });
@@ -66,10 +58,14 @@ var bfApp = angular.module('bfApp', ['ngRoute', 'ui.router', 'ngSanitize']);
 
 $scope.origresultList = []; 
 $scope.actualResultsList = [];
-$scope.badges = ['../img/badges/basic-badge.png', '../img/badges/blessed-badge.png', '../img/badges/kthxbai-badge.png','../img/badges/meh-badge.png', '../img/badges/orly-badge.png', '../img/badges/bf-badge.png', '../img/badges/lol-badge.png', '../img/badges/cute-badge.png',  '../img/badges/omg-badge.png', '../img/badges/win-badge.png', '../img/badges/wtf-badge.png'];
-$scope.shuffledBadges = shuffleArray($scope.badges); 
+$scope.badges = ['img/badges/basic-badge.png', 'img/badges/blessed-badge.png', 'img/badges/kthxbai-badge.png','img/badges/meh-badge.png', 'img/badges/orly-badge.png', 'img/badges/bf-badge.png', 'img/badges/lol-badge.png', 'img/badges/cute-badge.png',  'img/badges/omg-badge.png', 'img/badges/win-badge.png', 'img/badges/wtf-badge.png'];
+$scope.shuffledBadges = [];
 
 $scope.searchUrl = function(url){
+    $scope.submitPressed = true; 
+    $scope.url =url;
+    $scope.shuffledBadges = [];
+    $scope.shuffledBadges = shuffleArray($scope.badges);
     $scope.origresultList = []; 
     $scope.actualResultsList = [];
     $scope.personalityQuiz = false; 
@@ -122,7 +118,9 @@ $scope.searchUrl = function(url){
 
             if($scope.personalityQuiz == true){
                 //find title and subtitle
+
                 $scope.headerList = ($(html).find('hgroup'));
+                $("a", $scope.headerList[0]).remove().end()[0];
                 $("div", $scope.headerList[0]).remove().end()[0];
 
                 //broadcast
