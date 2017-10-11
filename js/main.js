@@ -110,7 +110,9 @@ $scope.searchUrl = function(url){
             $scope.personalityList = ($(html).find('div'));
             for(i=0; i<$scope.personalityList.length; i++){
                 var personality = $scope.personalityList[i];
-                if(($(personality).attr('class')) == 'subbuzz subbuzz-quiz subbuzz-quiz--numbered subbuzz-quiz--personality js-unsupported xs-mb4'){
+                var className = String($(personality).attr('class')); 
+                console.log(className);
+                if(className.includes('subbuzz-quiz--personality')){
                     $scope.personalityQuiz = true; 
                     console.log("it's true!");
                 }        
